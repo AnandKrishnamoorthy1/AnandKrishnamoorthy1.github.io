@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Which celebrity do you resemble ?</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="#" class="logo"><strong><h2>Which celebrity do you resemble ?</h2></strong>
+									Project submitted as a part of Harvard Extension Program requirement</br>
+									<img src="images/guess-the-celebrity/harvard-logo.png" width="40" alt="" />
+									
+									<a href="#" class="image"><img src="images/guess-the-celebrity/guess-the-celebrity.png" width="150" alt="" /></a>	
+								
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+									</header>
+
+									<!-- Content -->
+										<div class="row">
+										<div class="col-6 col-12-small">									
+										<h2 id="content">Main Idea</h2>
+										<p>The project mainly deals with Transfer Learning of the VGGFace model, which identifies 2622 different faces with high accuracy. The project also evaluates the performance of techniques like:</br></br>
+										▪ Image Augmentation</br>
+										▪ Face cropping</br>
+										▪ Freezing weights of different layers in the VGGFace model</br>
+										▪ Different classifier architecture on top of VGGFace model</p>
+										</div>
+										<div class="col-6 col-12-small">
+										<h2 id="content">Goal </h2>
+										<p>Goal of the project is to apply ‘Deep Learning’ techniques to recognize celebrity faces. During the training phase the model tries learns features important to recognize different faces based on the training data provided. Using the trained model, the model produces the top 3 celebrity matches for a new input image.</br></br>
+										This project can also answer the question ‘which celebrity do you resemble?’ The project can be modified to produce a model similar to the ‘Face ID’ by Apple Inc.</p>	
+
+
+										</div>
+										<div class="row">
+										<div class="col-6 col-12-small">
+										<h2 id="content">Dataset </h2>
+										<p>The dataset used during training is available publicly in Kaggle. The dataset consists of 33 celebrities with approximately 100 images for each celebrity. Fig. 1 shows the sample images from the dataset used during training.</br>
+										Python 3 was utilized for development of the code. </br></br>
+										Make sure below packages are installed:</br>
+										▪ Keras 2.3</br>
+										▪ Tensorflow 2.2</br>
+										▪ MTCNN</br>
+										All other packages come pre-install with google colab.</br>
+										<img src="images/guess-the-celebrity/dataset.png" width="400" alt="" />
+										 </p>
+										</div> 
+										<div class="col-6 col-12-small">
+
+										<h2 id="content">Hardware and Software </h2>
+										<p>The project was run on Google Colab with a GPU setting (Tesla p100). Although it is not required to run on GPU, running the code on GPU reduces training time.</br>
+										Python 3 was utilized for development of the code. </br></br>
+										Make sure below packages are installed:</br>
+										▪ Keras 2.3</br>
+										▪ Tensorflow 2.2</br>
+										▪ MTCNN</br>
+										All other packages come pre-install with google colab.
+										</p>	
+
+										</div>										
+										</div> 
+										<div class="row">
+										<div class="col-6 col-12-small">
+
+										<h2 id="content">Technique:</br> 1) Face Detection </h2>
+										<p>Identify human faces in an image. Create a bounding box around the face.
+										</br></br>
+										<a href = "https://github.com/ipazc/mtcnn">
+										Check out the example by the package developer. </br></br>
+										</a>
+										<img src="images/guess-the-celebrity/Face-detection-1.png" width="350" alt="" /></br></br>
+										Face detection example from our project. </br></br>
+										<img src="images/guess-the-celebrity/Face-detection-2.png" width="350" alt="" />											
+										</p>	
+
+										</div>
+										<div class="col-6 col-12-small">
+										<h2 id="content">Technique:</br> 2) Transfer Learning </h2>
+										<p>Fine tune a Pre-Trained mode. Freeze weights of initial layers and fine tune weights of layers near the output.
+
+										</br></br>
+										VGG Face(Model built to classify 2622 faces) architecture presented below. </br>
+										<a href = "https://sefiks.com/2018/08/06/deep-face-recognition-with-keras/">Original visualization from this article.</a></br></br>
+										<img src="images/guess-the-celebrity/VGG-Face.png" width="550" alt="" />
+										</br></br>
+										</div>
+										
+										
+										<div class="col-6 col-12-small">
+										<h2 id="content">Technique:</br> 3) Image Augmentation </h2>
+										<p>
+										Performed to: </br></br>
+										▪ Reduce overfitting</br>
+										▪ Increase size of training dataset
+										</br></br>
+										</a>
+										<img src="images/guess-the-celebrity/image-augmentation.png" width="350" alt="" /></br></br>								
+										</p>	
+
+										</div>
+										
+										<div class="col-6 col-12-small">
+										<h2 id="content">Model performance</h2>
+										<p></br>
+										▪ 86% validation accuracy</br>
+										▪ 93% validation accuracy for top 2 classes
+										</br></br>
+										Accuracy obtained by performing various techniques:</br></br>
+										</a>
+										<img src="images/guess-the-celebrity/model-performance.png" width="600" alt="" /></br></br>								
+										</p>											
+										
+										
+										
+										 </p>
+										</div> 
+										</div> 
+
+										<div class="col-6 col-12-small">
+										<h2 id="content">Results</h2>
+										<p></br>
+										Example 1: </br>
+										▪ Model correctly predits the celebrity
+										</br></br>
+										</a>
+										<img src="images/guess-the-celebrity/result-1.png" width="450" alt="" /></br></br>	
+										Example 2: </br>
+										▪ Tolerant to age?</br>
+										▪ The model correctly predicts the celebrity, even though the input image was a much older picture of the celebrity.
+										</br></br>
+										</a>
+										<img src="images/guess-the-celebrity/result-2.png" width="450" alt="" /></br></br>											
+										</p>										
+										
+										
+										 </p>
+										</div> 
+
+								
+									<hr class="major" />
+
+										
+					</div>
+										<ul class="actions">
+											<li><a href="index.html" class="button big">Go Back</a></li>
+										</ul>					
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="mailto:krishnamoorthy.a@northeastern.edu,ananduk1993@gmail.com">Message Me</a></li>
+										<li class="icon solid fa-phone">(857) 800-336</li>
+										<li class="icon solid fa-home">Boston, MA<br />
+										</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
