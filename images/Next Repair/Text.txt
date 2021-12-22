@@ -1,0 +1,2 @@
+Project Goal : 
+To predict when the next equipment repair based on past repairs. Then proactively approach customers to maintain and fix the equipment before equipment repair happen. 
